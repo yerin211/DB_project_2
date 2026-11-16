@@ -1,0 +1,84 @@
+<div class="scroll-content">
+
+    <!-- 1. 상단 네이비 둥근 헤더 -->
+    <header class="top-header" style="position: relative;">
+        <button type="button" onclick="loadScreen('home_screen.html')" aria-label="뒤로가기"
+            style="position:absolute; top:20px; left:20px; background:none; border:none; cursor:pointer; color:#ffffff; font-size:20px;">
+            ←
+        </button>
+        <div id="detail-icon" class="header-icon"
+            style="display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:#3b3d63;">
+            구
+        </div>
+        <div class="header-info">
+            <div id="detail-title" class="header-title">구독 이름</div>
+            <div id="detail-category" class="header-tag">카테고리</div>
+        </div>
+    </header>
+
+    <!-- 2. 화면 좌우 꽉 차는 회색 지출 정보 카드 -->
+    <div class="info-section-group">
+        <div class="full-info-card">
+            <div id="detail-total-label" class="info-label">현재까지 총액(1개월)</div>
+            <div id="detail-total-value" class="info-value">0원</div>
+        </div>
+        <div class="full-info-card">
+            <div id="detail-unit-label" class="info-label">월별 액</div>
+            <div id="detail-unit-value" class="info-value">0원</div>
+        </div>
+    </div>
+
+    <!-- 3. 내부 컨텐츠 영역 -->
+    <div class="middle-content">
+
+        <!-- 단위 표시 -->
+        <div class="unit-select-row">
+            <div id="detail-cycle-box" class="select-box">월</div>
+            <span>단위</span>
+        </div>
+
+        <!-- 결제일 달력 피커 (cal_screen.css 충돌 방지용 sd- 접두사 적용) -->
+        <div class="sd-calendar-picker">
+            <div class="sd-calendar-header">
+                <span id="detail-cycle-title" class="sd-calendar-title">매월</span>
+                <span id="detail-calendar-month" class="sd-calendar-month">&lt; 11월 &gt;</span>
+            </div>
+            <div id="detail-calendar-days" class="sd-calendar-days"></div>
+        </div>
+
+        <!-- 알림 및 N개월 카드 -->
+        <div class="two-card-row">
+            <div class="status-card">
+                <div class="status-card-title">알림</div>
+                <div id="detail-alert-toggle" class="toggle-switch" style="cursor:pointer;">
+                    <div id="detail-alert-btn" class="toggle-btn">ON</div>
+                    <span id="detail-alert-off" class="toggle-text-off">OFF</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <div class="status-card-title">현재</div>
+                <div class="n-month-box">
+                    <span id="detail-months-count" class="n-val">1</span>
+                    <span class="n-unit">개월</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사용중인 카드 -->
+        <div class="card-info-group">
+            <div class="info-label">사용중인 카드</div>
+            <div class="card-row">
+                <div class="bank-icon"></div>
+                <span id="detail-bank-name" class="bank-name">은행명</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 4. 구독 취소하기 -->
+    <div id="btn-cancel-sub" class="cancel-section" style="cursor:pointer;">
+        <div class="cancel-title">구독 취소하기</div>
+    </div>
+
+</div>

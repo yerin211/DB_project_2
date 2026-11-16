@@ -1,0 +1,188 @@
+/* 모든 요소의 크기 계산을 패딩 포함으로 고정 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 폰 전체 프레임: 좌우로 삐져나가는 요소 잘라내기 */
+.app-container {
+    width: 390px;
+    height: 844px;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    /* 💡 오른쪽으로 밀리는 현상을 완전히 방지 */
+    background-color: #ffffff;
+}
+
+/* 동적 컨텐츠 래퍼 */
+#app-content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* 스크롤 영역 전체: 좌우 패딩을 0으로 줘서 기본을 화면 끝까지(Full-width)로 설정 */
+.scroll-content {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}               
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 모바일 프레임 바깥 테두리 */
+.app-container {
+    width: 360px;
+    height: 760px;
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable 메인 스크롤 영역 */
+.scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 150px;
+    /* 플로팅 버튼 및 네비게이션 바 여백 고려 */
+}
+
+.scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* 상단 타이틀 영역 패딩 */
+.header-section {
+    padding: 32px 24px 20px 24px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+}
+
+.card-count {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+/* 카드 리스트 영역 (화면 좌우 꽉 차는 레이아웃) */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* 풀 너비 회색 카드 항목 */
+.card-item {
+    width: 100%;
+    background-color: #f8f8fa;
+    border-radius: 0;
+    /* 라운딩 없이 좌우 꽉 채움 */
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bank-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.card-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 카드 네이비 아이콘 (라운딩 6px 적용) */
+.card-chip-icon {
+    width: 52px;
+    height: 34px;
+    background-color: #3b3d63;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.card-info-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* 플로팅 '카드 등록하기' 버튼 */
+.add-card-btn {
+    position: absolute;
+    bottom: 88px;
+    right: 20px;
+    height: 46px;
+    padding: 0 20px;
+    background-color: #3b3d63;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 5;
+}
+
+.add-card-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+/* 하단 둥근 네비게이션 바 */
+.bottom-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 54px;
+    background-color: #3b3d63;
+    border-radius: 27px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+}

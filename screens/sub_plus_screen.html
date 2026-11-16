@@ -1,0 +1,86 @@
+<div class="screen-add-sub">
+    <!-- 상단 네이비 원형 장식 -->
+    <div class="top-right-circle"></div>
+
+    <!-- 상단 헤더 -->
+    <header class="add-header">
+        <button type="button" class="back-btn" onclick="loadScreen('home_screen.html')" aria-label="뒤로가기">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+        <h1 class="page-title">구독 추가하기</h1>
+    </header>
+
+    <!-- 입력 폼 영역 -->
+    <form id="subscription-form" class="add-form">
+        <div class="form-group">
+            <label class="form-label light-label">구독 이름</label>
+            <input type="text" id="sub-name" class="form-input" placeholder="입력" required />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">카테고리(구별)</label>
+            <input type="text" id="sub-category" class="form-input" placeholder="입력" required />
+        </div>
+
+        <hr class="form-divider" />
+
+        <div class="form-group">
+            <label class="form-label">가격</label>
+            <input type="text" id="sub-price" class="form-input" placeholder="입력" required />
+        </div>
+
+        <!-- 년 / 월 토글 버튼 -->
+        <div class="form-group">
+            <div class="cycle-toggle">
+                <span id="opt-year" class="period-option active">년</span>
+                <span class="slash">/</span>
+                <span id="opt-month" class="period-option inactive">월</span>
+            </div>
+        </div>
+
+        <!-- 결제 월 (화살표 + 직접 입력 모두 가능) -->
+        <div class="form-group" id="pay-month-container">
+            <label class="form-label" id="pay-month-label">결제 월</label>
+            <div class="spinner-row">
+                <input type="text" id="pay-month" class="spinner-input" value="12" inputmode="numeric" maxlength="2" />
+                <div class="spinner-arrows">
+                    <button type="button" id="btn-month-up" class="arrow-btn">▲</button>
+                    <button type="button" id="btn-month-down" class="arrow-btn">▼</button>
+                </div>
+                <span class="spinner-unit" id="pay-month-unit">월</span>
+            </div>
+        </div>
+
+        <!-- 결제 일 (화살표 + 직접 입력 모두 가능) -->
+        <div class="form-group">
+            <label class="form-label" id="pay-day-label">결제 일</label>
+            <div class="spinner-row">
+                <input type="text" id="pay-day" class="spinner-input" value="1" inputmode="numeric" maxlength="2" />
+                <div class="spinner-arrows">
+                    <button type="button" id="btn-day-up" class="arrow-btn">▲</button>
+                    <button type="button" id="btn-day-down" class="arrow-btn">▼</button>
+                </div>
+                <span class="spinner-unit">일</span>
+            </div>
+        </div>
+
+        <!-- 사용할 은행 & 카드 뒷자리(4자리) -->
+        <div class="form-group">
+            <label class="form-label">사용할 은행</label>
+            <input type="text" id="sub-bank" class="form-input" placeholder="예: 토스뱅크" required />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">카드 뒷자리 (4자리)</label>
+            <input type="text" id="sub-card-digits" class="form-input" placeholder="예: 1234" inputmode="numeric"
+                maxlength="4" required />
+        </div>
+
+        <!-- 구독 추가하기 버튼 -->
+        <button type="submit" class="btn-submit-sub">구독 추가하기</button>
+    </form>
+</div>

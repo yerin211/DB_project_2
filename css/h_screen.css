@@ -1,0 +1,171 @@
+/* 상단 영역 padding (프로필 ~ 현재 고정 지출 타이틀) */
+.top-section {
+    padding: 24px 20px 0 20px;
+}
+
+/* 1. 상단 프로필 원형 */
+.profile-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #dbe2ef;
+    margin-bottom: 24px;
+}
+
+/* 2. 상단 네이비 지출 요약 카드 */
+.summary-card {
+    width: 100%;
+    height: 110px;
+    background-color: #3b3d63;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 28px;
+}
+
+.summary-card p {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.summary-amount {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 14px;
+    letter-spacing: -0.5px;
+}
+
+/* 3. 섹션 타이틀 공통 */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 16px;
+}
+
+/* 4. 가로 스크롤 구독 카드 섹션 */
+.upcoming-container {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
+}
+
+.upcoming-container:empty {
+    display: none;
+}
+
+.upcoming-container::-webkit-scrollbar {
+    display: none;
+}
+
+.upcoming-card {
+    min-width: 112px;
+    height: 112px;
+    background-color: #dbe2ef;
+    border-radius: 16px;
+    flex-shrink: 0;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upcoming-card-day {
+    font-size: 11px;
+    font-weight: 700;
+    color: #3b3d63;
+}
+
+.upcoming-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111111;
+    word-break: keep-all;
+}
+
+.upcoming-card-price {
+    font-size: 12px;
+    color: #555555;
+}
+
+/* 5. 현재 고정 지출 섹션 (화면 좌우 꽉 차는 레이아웃) */
+.expense-section {
+    width: 100%;
+}
+
+.expense-section .section-title {
+    padding: 0 20px;
+}
+
+.expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* 라운딩 없이 화면 좌우 100% 꽉 채우는 리스트 바 */
+.expense-item {
+    width: 100%;
+    background-color: #f8f8fa;
+    border-radius: 0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 80px;
+}
+
+.expense-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #dbe2ef;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #3b3d63;
+}
+
+.expense-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.expense-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 3px;
+}
+
+.expense-price {
+    font-size: 13px;
+    color: #555555;
+}
+
+/* 구독 0개일 때 빈 상태 안내 */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 56px 20px;
+    gap: 14px;
+}
+
+.empty-state p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333333;
+    font-weight: 500;
+}

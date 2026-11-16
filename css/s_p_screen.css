@@ -1,0 +1,234 @@
+/* 전체 화면 컨테이너 (세로 스크롤 허용 & 하단 여백 확보) */
+.screen-add-sub {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    height: 100vh;
+    max-height: 812px;
+    background-color: #FFFFFF;
+    padding: 24px 24px 120px 24px;
+    /* 하단 네비게이션 바와 겹치지 않도록 여유 공간 확보 */
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* 가로 스크롤만 방지 */
+    overflow-y: auto;
+    /* 세로 스크롤 가능하게 설정 */
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 스크롤바 깔끔하게 정돈 */
+.screen-add-sub::-webkit-scrollbar {
+    width: 4px;
+}
+
+.screen-add-sub::-webkit-scrollbar-thumb {
+    background-color: rgba(50, 54, 89, 0.2);
+    border-radius: 4px;
+}
+
+/* 상단 네이비 원형 그래픽 */
+.top-right-circle {
+    position: absolute;
+    top: -110px;
+    left: -35px;
+    width: 440px;
+    height: 310px;
+    background-color: #323659;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 헤더 */
+.add-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 28px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+
+/* 폼 영역 */
+.add-form {
+    position: relative;
+    z-index: 1;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    transition: opacity 0.2s ease;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+/* 네이비 원 위에 올라가는 첫 번째 라벨 흰색 처리 */
+.form-label.light-label {
+    color: #FFFFFF;
+}
+
+/* 텍스트 입력창 */
+.form-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #9A9EB2;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #222222;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #323659;
+}
+
+.form-input::placeholder {
+    color: #B4B7C5;
+}
+
+/* 중간 구분선 */
+.form-divider {
+    border: none;
+    border-top: 1px solid #9A9EB2;
+    margin: 20px 0;
+}
+
+/* 년 / 월 토글 버튼 */
+.cycle-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 36px;
+    border: 1px solid #9A9EB2;
+    border-radius: 10px;
+    font-size: 13px;
+    background-color: #FFFFFF;
+}
+
+.period-option {
+    cursor: pointer;
+    padding: 4px 6px;
+    user-select: none;
+}
+
+.period-option.active {
+    color: #222222;
+    font-weight: 700;
+}
+
+.period-option.inactive {
+    color: #C5C8D4;
+    font-weight: 400;
+}
+
+.cycle-toggle .slash {
+    margin: 0 2px;
+    color: #B4B7C5;
+}
+
+/* 결제 월 / 결제 일 스피너 영역 */
+.spinner-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spinner-input {
+    width: 88px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #9A9EB2;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.spinner-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.arrow-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 11px;
+    line-height: 1;
+    color: #556688;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow-btn:active {
+    transform: scale(0.9);
+}
+
+.spinner-unit {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222222;
+}
+
+/* 월 선택 시 결제 월 비활성화(회색) 스타일 */
+.form-group.disabled {
+    pointer-events: none;
+}
+
+.form-group.disabled .spinner-input {
+    border-color: #E2E4EC;
+    color: #D0D3DE;
+    background-color: #FAFAFC;
+}
+
+.form-group.disabled .arrow-btn,
+.form-group.disabled .spinner-unit {
+    color: #D0D3DE;
+}
+
+/* 하단 구독 추가하기 버튼 */
+.btn-submit-sub {
+    width: 100%;
+    height: 46px;
+    margin-top: 16px;
+    background-color: #323659;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit-sub:hover {
+    background-color: #242742;
+}

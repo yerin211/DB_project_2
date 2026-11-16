@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구독 관리 앱</title>
+
+    <!-- 모든 CSS 분리 파일 연결 -->
+    <link rel="stylesheet" href="css/c_screen.css" />
+    <link rel="stylesheet" href="css/cal_screen.css" />
+    <link rel="stylesheet" href="css/s_p_screen.css" />
+    <link rel="stylesheet" href="css/c_p_screen.css" />
+    <link rel="stylesheet" href="css/s_d_screen.css" />
+    <link rel="stylesheet" href="css/h_screen.css" />
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- 화면이 동적으로 동적으로 동적으로 들어갈 영역 -->
+        <div id="app-content" style="width:100%; height:100%;"></div>
+
+        <!-- 하단 공통 네비게이션 바 -->
+        <nav class="bottom-nav">
+            <img class="nav-icon" src="assets/icon/home_icon.svg" alt="홈" onclick="loadScreen('home_screen.html')">
+            <img class="nav-icon" src="assets/icon/card_icon.svg" alt="카드" onclick="loadScreen('card_screen.html')">
+            <img class="nav-icon" src="assets/icon/calendar_icon.svg" alt="달력"
+                onclick="loadScreen('calendar_screen.html')">
+            <img class="nav-icon" src="assets/icon/plus_icon.svg" alt="추가" onclick="loadScreen('sub_plus_screen.html')">
+        </nav>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

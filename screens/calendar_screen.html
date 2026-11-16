@@ -1,0 +1,42 @@
+<div class="scroll-content">
+
+    <!-- 상단 아치형 네이비 헤더 -->
+    <header class="calendar-header">
+        <div class="month-picker-title">
+            <span id="cal-prev-month" onclick="changeCalendarMonth(-1)"
+                style="cursor:pointer; padding:4px 10px; user-select:none;">&lt;</span>
+            <span id="cal-current-title">2026 11월</span>
+            <span id="cal-next-month" onclick="changeCalendarMonth(1)"
+                style="cursor:pointer; padding:4px 10px; user-select:none;">&gt;</span>
+        </div>
+    </header>
+
+    <!-- 요일 헤더 (일~토) -->
+    <div
+        style="display:grid; grid-template-columns:repeat(7, 1fr); padding:20px 20px 0 20px; text-align:center; font-size:12px; font-weight:700; color:#888888;">
+        <span style="color:#e05252;">일</span>
+        <span>월</span>
+        <span>화</span>
+        <span>수</span>
+        <span>목</span>
+        <span>금</span>
+        <span style="color:#4b6cb7;">토</span>
+    </div>
+
+    <!-- 달력 날짜 그리드 (JS가 실제 연/월에 맞춰 자동 생성) -->
+    <main class="calendar-container" style="padding-top: 14px;">
+        <div id="calendar-grid" class="calendar-grid"></div>
+    </main>
+
+    <!-- 선택한 날짜 또는 이번 달 결제 예정 구독 상세 영역 -->
+    <section style="padding: 8px 20px 24px 20px;">
+        <div id="cal-selected-date-title"
+            style="font-size: 14px; font-weight: 700; color: #3b3d63; margin-bottom: 12px;">
+            이번 달 결제 예정 구독
+        </div>
+        <div id="cal-day-subs-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+    </section>
+
+    
+
+</div>
